@@ -22,10 +22,8 @@ public class NoteController {
 
     @PostMapping
     public ResponseEntity<NoteDto> createNote(@Valid @RequestBody NoteDto noteDto) {
-        // Конвертуємо DTO в Entity для сервісу
         Note note = noteMapper.toEntity(noteDto);
         Note savedNote = noteService.create(note);
-        // Конвертуємо результат назад у DTO для клієнта
         return ResponseEntity.status(HttpStatus.CREATED).body(noteMapper.toDto(savedNote));
     }
 
@@ -37,7 +35,6 @@ public class NoteController {
 
     @GetMapping
     public ResponseEntity<List<NoteDto>> getAllNotes() {
-        // Використовуємо твій підхід зі Stream API для мапінгу списку
         List<NoteDto> dtos = noteService.getAll().stream()
                 .map(noteMapper::toDto)
                 .toList();
