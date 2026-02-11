@@ -1,4 +1,4 @@
-package ua.opnu.project.entity.repository;
+package ua.opnu.project.repository;
 
 import ua.opnu.project.entity.Note;
 import org.springframework.data.jpa.repository.JpaRepository;

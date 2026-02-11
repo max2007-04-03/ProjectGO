@@ -1,4 +1,4 @@
-package ua.opnu.project.entity.dto;
+package ua.opnu.project.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
